@@ -1,8 +1,8 @@
 <?php
 /**
- * Template Name: Sponsor Template
+ * Template Name: Home Template
  *
- * Template für die Darstellung der Sponsoren
+ * Template für die Darstellung der Startseite
  *
  * @package Understrap
  */
@@ -44,7 +44,7 @@ if ( is_front_page() ) {
 
 					
 						$args = array(
-	    					'post_type'  => 'domi_sponsors_cpt',
+	    					'post_type'  => 'post',
 	    					'numberposts' => -1,
 	    					'post_status' => 'publish', 
     						'orderby' => 'menu_order', 
@@ -57,18 +57,23 @@ if ( is_front_page() ) {
 					<div class="row sponsor-row ">
 					<?php
 
-					$sponsors = get_posts( $args );
-					foreach ($sponsors as $sponsor ) {
+					$postlist = get_posts( $args );
+					foreach ($postlist as $postentry ) {
 						 
 
 						?>
 						 
 							<div class="col-md-6 col-md-6 sponsor-col" >
 								<div class="card">
-									<h3><?php echo $sponsor->post_title;?></h3>
+									<h3><?php echo $postentry->post_title;?></h3>
 							 		<div class="image-container">
 							 			
-							 			<?php $sponsorlink = get_field('sponsor_url', $sponsor->ID); ?>
+							 			<?php
+							 				
+							 				/* Pay Attention: get_the_content() does not apply a filter, therefore video are not beingt embedded f.e. */
+							 				$postentrycontent = get_the_content(null, false, $postentry->ID);
+							 				echo $postentrycontent;
+							 			?>	
 							 			<a href="<?=$sponsorlink?>" target="_blank">
 							 				<img src="<?=get_the_post_thumbnail_url($sponsor->ID, 'medium')?>" />
 							 			</a>	
