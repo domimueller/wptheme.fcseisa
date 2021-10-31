@@ -54,7 +54,7 @@ if ( is_front_page() ) {
 
 					?>
 					
-					<div class="row sponsor-row ">
+					<div class="row custom-postentry-row ">
 					<?php
 
 					$postlist = get_posts( $args );
@@ -63,22 +63,22 @@ if ( is_front_page() ) {
 
 						?>
 						 
-							<div class="col-md-6 col-md-6 sponsor-col" >
+							<div class="col-md-6 col-md-6 custom-postentry-col" >
 								<div class="card">
 									<h3><?php echo $postentry->post_title;?></h3>
-							 		<div class="image-container">
-							 			
-							 			<?php
-							 				
-							 				/* Pay Attention: get_the_content() does not apply a filter, therefore video are not beingt embedded f.e. */
-							 				$postentrycontent = get_the_content(null, false, $postentry->ID);
-							 				echo $postentrycontent;
-							 			?>	
-							 			<a href="<?=$sponsorlink?>" target="_blank">
-							 				<img src="<?=get_the_post_thumbnail_url($sponsor->ID, 'medium')?>" />
-							 			</a>	
+							 		<div class="image-container">							 			
+							 			<a href="<?=$customPostentryLink?>" target="_blank">
+							 				<img src="<?=get_the_post_thumbnail_url($postentry->ID, 'medium')?>" />
+							 			</a>								 			
 							 		</div>	
-
+						 			
+						 			<div class="text-container">
+							 			<?php		
+							 				$postentrycontent = get_the_content(null, false, $postentry->ID);
+							 				echo apply_filters('the_content', $postentrycontent);						 				
+							 			?>								 		
+							 		</div>
+							 				
 								</div>
 							</div>	
 
@@ -86,7 +86,7 @@ if ( is_front_page() ) {
 						<?php
 					}
 					?>
-					</div> <!-- sponsor row-->
+					</div> <!-- postentry row-->
 
 				</main><!-- #main -->
 

@@ -59,10 +59,8 @@ if ( is_front_page() ) {
 
 					$sponsors = get_posts( $args );
 					foreach ($sponsors as $sponsor ) {
-						 
 
 						?>
-						 
 							<div class="col-md-6 col-md-6 sponsor-col" >
 								<div class="card">
 									<h3><?php echo $sponsor->post_title;?></h3>
