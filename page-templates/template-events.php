@@ -42,15 +42,22 @@ if ( is_front_page() ) {
 
 					<?php
 
-					
+						$today = date("Y-m-d");
 						$args = array(
-	    					'post_type'  => 'domi_events_cpt',
-	    					'numberposts' => -1,
-	    					'post_status' => 'publish', 
-    						'orderby' => 'menu_order', 
-    						'order' => 'ASC', 
-
-						);
+							'post_type' => 'domi_events_cpt',
+							'posts_per_page' => -1,
+							'meta_key' => 'events_startdate',
+							'orderby' => 'meta_value',
+							'order' => 'ASC',
+							    'meta_query' => array(
+							        array(
+							           'key' => 'events_startdate',
+							           'value' => $today,
+							           'compare' => '>=',
+							           'type' => 'datetime'// you can change it to datetime also
+							       )
+							)
+						);					
 
 					?>
 					
@@ -67,7 +74,13 @@ if ( is_front_page() ) {
 						$events_starttime = $metafields['events_starttime'];
 						$events_endtime = $metafields['events_endtime'];
 
-
+						$text_starttime = get_field('text_starttime', 'options');
+						$text_endtime = get_field('text_endtime', 'options');
+						$text_startdate = get_field('text_startdate', 'options');
+						$text_enddate = get_field('text_enddate', 'options');
+						$text_location = get_field('text_location', 'options');
+						$timeUnit = get_field('timeUnit', 'options');
+						
 						?>
 						 
 							<div class="col-md-6 col-md-6 custom-events-col" >
@@ -76,27 +89,123 @@ if ( is_front_page() ) {
 									<h3><?php echo $event->post_title;?></h3>
 
 									<div class="events-details-container">	
-										<div class="row time-row">
-											<?php if ( !empty($events_starttime) and isset($events_starttime)) : ?>						<div class="col-sm-12">
-													<i class="far fa-clock"></i>
-													<span><?php echo $events_starttime;?></span>
+										<div class="row eventdetails-row">
+
+											<!-- Events Startdate-->
+											<?php if ( !empty($events_startdate) and isset($events_startdate)) : ?>						
+												<div class="col-sm-12">
+												
+													<i class="far fa-calendar-alt"></i>
+												
+													<?php if ( !empty($text_startdate) and isset($text_startdate)) : ?>						
+														<span class="details-title"><?=$text_startdate;?></span>
+													<?php endif;?>		
+													
+													<?php 
+														// convert 20211101 to 01.11.2021
+														$displayDate = date("d.m.Y", strtotime($events_startdate));
+													?>
+													<span><?php echo $displayDate;?></span> 
+									
 
 												</div>
+
+											<?php endif;  ?>	
+
+											<!-- Events Enddate-->
+											<?php if ( !empty($events_enddate) and isset($events_enddate)) : ?>						
+												<div class="col-sm-12">
+												
+													<i class="far fa-calendar-alt"></i>
+												
+													<?php if ( !empty($text_enddate) and isset($text_enddate)) : ?>						
+														<span class="details-title"><?=$text_enddate;?></span>
+													<?php endif;?>		
+													
+													<?php 
+														// convert 20211101 to 01.11.2021
+														$displayDate = date("d.m.Y", strtotime($events_startdate));
+													?>	
+													<span><?php echo $displayDate;?></span>
+
+												</div>
+
+											<?php endif;  ?>	
+
+
+											<!-- Events Starttime-->
+
+											<?php 
+												//also check if time is not midnight -> default value when no event time is being selected
+											if ( !empty($events_starttime) and isset($events_starttime)) : ?>						
+												<div class="col-sm-12">
+												
+													<i class="far fa-clock"></i>
+												
+													<?php if ( !empty($text_starttime) and isset($text_starttime)) : ?>						
+														<span class="details-title"><?=$text_starttime;?></span>
+													<?php endif;?>		
+													
+													<span><?php echo $events_starttime;?></span>
+													
+													<?php if ( !empty($timeUnit) and isset($timeUnit)) : ?>						
+														<span class="timeUnit"><?php echo $timeUnit;?></span>
+													<?php endif;?>		
+												</div>
+
 											<?php endif;  ?>
 
-											<?php if ( !empty($events_enddate) and isset($events_enddate)) : ?>								
-											<?php endif;  ?>											
-									
-										</div>
-										<div class="row date-row">
+										
+											<!-- Events Endtime-->
+											<?php 
+											
+											//also check if time is not midnight -> default value when no event time is being selected
+											if ( !empty($events_endtime) and isset($events_endtime)) : ?>						
+												<div class="col-sm-12">
+												
+													<i class="far fa-clock"></i>
 
-										</div>	
+												
+													<?php if ( !empty($text_endtime) and isset($text_endtime)) : ?>						
+														<span class="details-title"><?=$text_endtime;?></span>
+													<?php endif;?>		
+													
+													<span><?php echo $events_endtime;?></span>
+
+													<?php if ( !empty($timeUnit) and isset($timeUnit)) : ?>						
+														<span class="timeUnit"><?php echo $timeUnit;?></span>
+													<?php endif;?>													
+
+												</div>
+
+											<?php endif;  ?>	
+
+
+											<!-- Events Location-->
+											<?php if ( !empty($events_location) and isset($events_location)) : ?>						
+												<div class="col-sm-12">
+												
+													<i class="fas fa-map-marker-alt"></i>
+												
+													<?php if ( !empty($text_location) and isset($text_location)) : ?>						
+														<span class="details-title"><?=$text_location;?></span>
+													<?php endif;?>		
+													
+													<span><?php echo $events_location;?></span>
+													
+													
+
+												</div>
+
+											<?php endif;  ?>												
+
+
+
+
+
+
+										</div> <!--eventdetails-row -->
 									</div>	
-
-
-							 		<div class="image-container">							 			
-							 			<img src="<?=get_the_post_thumbnail_url($event->ID, 'medium')?>" />
-							 		</div>	
 						 			
 						 			<div class="text-container">
 							 			<?php		
@@ -104,6 +213,11 @@ if ( is_front_page() ) {
 							 				echo apply_filters('the_content', $eventcontent);						 				
 							 			?>								 		
 							 		</div>
+
+							 		<div class="image-container">							 			
+							 			<img src="<?=get_the_post_thumbnail_url($event->ID, 'medium')?>" />
+							 		</div>	
+
 							 				
 								</div> <!-- card-->
 							</div>	<!-- col-->
