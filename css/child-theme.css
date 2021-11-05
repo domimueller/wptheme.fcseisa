@@ -14679,6 +14679,11 @@ form label.gfield_label {
   width: calc(50% - 8px) !important;
 }
 
+/* gfield html comments  */
+.gfield_html_formatted {
+  display: block;
+}
+
 input[type=submit] {
   width: 200px;
   cursor: pointer;

@@ -36,6 +36,8 @@ input[type="date"], input[type="datetime"], input[type="datetime-local"],  input
 form label.gfield_label {display: none !important;}
 .gform_wrapper textarea.medium { width: calc(50% - 8px) !important; }
 
+/* gfield html comments  */
+.gfield_html_formatted {display: block;}
 
 input[type="submit"]{
     width: 200px;
