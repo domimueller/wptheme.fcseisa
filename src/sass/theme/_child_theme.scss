@@ -26,7 +26,7 @@ input[type="date"], input[type="datetime"], input[type="datetime-local"],  input
 
 
 
-input[type="date"], input[type="datetime"], input[type="datetime-local"],  input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="range"], input[type="search"], input[type="tel"],  input[type="text"], input[type="time"], input[type="url"], input[type="week"] , textarea, select{, textarea {
+input[type="date"], input[type="datetime"], input[type="datetime-local"],  input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="range"], input[type="search"], input[type="tel"],  input[type="text"], input[type="time"], input[type="url"], input[type="week"] , textarea, select, textarea {
 
 	padding-left: 15px !important;
 	margin-top: 30px; margin-bottom: 30px;
@@ -68,7 +68,7 @@ input[type="submit"]{
 
 
 input[type="submit"]:hover {
-background: #fff !important;
+    background: #fff !important;
     color: #102985 !important;
     border-color: #102985;
 
