@@ -6,7 +6,70 @@ a.custom-logo-link {max-height: 99px; max-width: 80px; margin-top: 15px; margin-
 /* ### POST ENTRIES ON HOMEPAGE */
 
 .custom-postentry-col {margin-top: 40px; margin-bottom: 40px; }
-.image-container {margin-top: 30px; text-align: center;}
+.image-container {margin-top: 30px; margin-bottom: 30px; text-align: center;}
 .card {box-shadow: 0 1px 3px rgb(34 40 49 / 20%); border-radius: 3px; -webkit-transition: all .2s ease-in-out; transition: all .2s ease-in-out; padding: 3rem 2.75rem;}
-.text-container {margin-top: 40px; margin-bottom: 0px;}
+.text-container {margin-top: 10px; margin-bottom: 0px;}
 .entry-header {margin-bottom: 20px;}
+
+/* #### Form Styles #### */
+
+input[type="date"], input[type="datetime"], input[type="datetime-local"],  input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="range"], input[type="search"], input[type="tel"],  input[type="text"], input[type="time"], input[type="url"], input[type="week"] , textarea, select{
+	background-color: transparent !important;
+	text-transform: uppercase !important;
+	border-radius: 0;
+	border: 2px solid #102985;
+	color: #102985;
+	height: 45px;
+	outline: none;
+}
+
+
+
+
+input[type="date"], input[type="datetime"], input[type="datetime-local"],  input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="range"], input[type="search"], input[type="tel"],  input[type="text"], input[type="time"], input[type="url"], input[type="week"] , textarea, select{, textarea {
+
+	padding-left: 15px !important;
+	margin-top: 30px; margin-bottom: 30px;
+}
+
+
+form label.gfield_label {display: none !important;}
+.gform_wrapper textarea.medium { width: calc(50% - 8px) !important; }
+
+
+input[type="submit"]{
+    width: 200px;
+    cursor: pointer;
+    margin-top: 20px;
+    padding: 10px 30px 11px;
+    border-style: solid;
+    border-color: #102985;
+    border-width: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 3px;
+    border-radius: 2px;
+    background: #102985;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: normal;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+
+input[type="submit"]:hover {
+background: #fff !important;
+    color: #102985 !important;
+    border-color: #102985;
+
+}   

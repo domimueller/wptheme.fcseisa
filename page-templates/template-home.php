@@ -66,18 +66,25 @@ if ( is_front_page() ) {
 							<div class="col-md-6 col-md-6 custom-postentry-col" >
 								<div class="card">
 									<h3><?php echo $postentry->post_title;?></h3>
-							 		<div class="image-container">							 			
-							 			<a href="<?=$customPostentryLink?>" target="_blank">
-							 				<img src="<?=get_the_post_thumbnail_url($postentry->ID, 'medium')?>" />
-							 			</a>								 			
-							 		</div>	
-						 			
-						 			<div class="text-container">
-							 			<?php		
-							 				$postentrycontent = get_the_content(null, false, $postentry->ID);
-							 				echo apply_filters('the_content', $postentrycontent);						 				
-							 			?>								 		
-							 		</div>
+							 		
+							 		<?php 
+										if ( has_post_thumbnail($postentry->ID) == true):
+								 		?>
+									 		<div class="image-container">							 			
+									 			<a href="<?=$customPostentryLink?>" target="_blank">
+									 				<img src="<?=get_the_post_thumbnail_url($postentry->ID, 'medium')?>" />
+									 			</a>								 			
+									 		</div>	
+								 	<?php		
+										endif; 
+							 		?>
+						 					
+					 				<div class="text-container">
+						 				<?php		
+						 					$postentrycontent = get_the_content(null, false, $postentry->ID);
+						 					echo apply_filters('the_content', $postentrycontent);						 				
+						 				?>								 		
+						 			</div>
 							 				
 								</div>
 							</div>	

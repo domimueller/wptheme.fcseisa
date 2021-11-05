@@ -28,7 +28,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<div class="site-info">
 
 
-						<a href="https://www.instagram.com/fcseisa_08/">Seisa 08 auf Instagram</a><span class="sep"> | </span> Allez Seisa!  <span class="sep"> | </span> <a href="https://club.football.ch/club/spielbetrieb/aktuelle-spiele.aspx/v-875798">Seisa 08 auf club.football.ch</a>
+						<a href="https://www.instagram.com/fcseisa_08/" target="_blank">Seisa 08 auf Instagram</a><span class="sep"> | </span> Allez Seisa!  <span class="sep"> | </span> <a href="https://club.football.ch/club/spielbetrieb/aktuelle-spiele.aspx/v-875798"  target="_blank">Seisa 08 auf club.football.ch</a>
 
 
 					</div><!-- .site-info -->
