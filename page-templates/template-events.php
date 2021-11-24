@@ -70,7 +70,7 @@ if ( is_front_page() ) {
 					if (empty($events)):
 						 ?>
 						 <div class="col-sm-12">
-						 	<h5>Aktuell keine Veranstaltungen erfasst. </h5>'
+						 	<h5>Aktuell keine Veranstaltungen erfasst. </h5>
 						 </div>	
 
 						<?php 

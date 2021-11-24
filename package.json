@@ -60,5 +60,8 @@
     "rollup": "^2.56.2",
     "sass": "^1.38.1",
     "understrap": "github:understrap/understrap#develop"
+  },
+  "dependencies": {
+    "gulp": "^4.0.2"
   }
 }

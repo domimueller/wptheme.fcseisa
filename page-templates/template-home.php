@@ -38,10 +38,11 @@ if ( is_front_page() ) {
 							comments_template();
 						}
 					}
+
 					?>
 
 					<?php
-
+					get_template_part( 'loop-templates/', 'content' );
 					
 						$args = array(
 	    					'post_type'  => 'post',
@@ -52,7 +53,10 @@ if ( is_front_page() ) {
 
 						);
 
+					
+
 					?>
+					
 					
 					<div class="row custom-postentry-row ">
 					<?php
@@ -93,6 +97,38 @@ if ( is_front_page() ) {
 						<?php
 					}
 					?>
+					
+					<div class="col-sm-12">
+						<div class="row sponsor-row ">
+							<div class="title-col col-sm-12">
+								<h2>Unsere Sponsoren </h2>
+							</div>	
+
+						<?php
+
+							$args = array(
+		    					'post_type'  => 'domi_sponsors_cpt',
+		    					'numberposts' => -1,
+		    					'post_status' => 'publish', 
+	    						'orderby' => 'menu_order', 
+	    						'order' => 'ASC', 
+
+							);
+
+
+						$sponsors = get_posts( $args );
+						
+						?>
+
+						<?php 
+						foreach ($sponsors as $sponsor ) {
+							get_template_part( 'loop-templates/content', 'sponsors' );	
+						}
+						?>
+						</div> <!-- sponsor row-->
+					</div> <!-- col -->
+
+
 					</div> <!-- postentry row-->
 
 				</main><!-- #main -->

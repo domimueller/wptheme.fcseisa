@@ -1,3 +1,7 @@
+/* #### General  #### */
+
+.image-container {text-align: center;}
+
 /* #### LOGO  #### */
 
 a.custom-logo-link {max-height: 99px; max-width: 80px; margin-top: 15px; margin-bottom: 15px; }
@@ -12,6 +16,10 @@ a.custom-logo-link {max-height: 99px; max-width: 80px; margin-top: 15px; margin-
 .entry-header {margin-bottom: 20px;}
 
 /* #### Form Styles #### */
+
+
+.gfield {margin-top: 15px; margin-bottom: 15px}
+body .gform_wrapper.gravity-theme fieldset.fieldsetAdvancedMargin {margin-top: 30px;}
 
 input[type="date"], input[type="datetime"], input[type="datetime-local"],  input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="range"], input[type="search"], input[type="tel"],  input[type="text"], input[type="time"], input[type="url"], input[type="week"] , textarea, select{
 	background-color: transparent !important;

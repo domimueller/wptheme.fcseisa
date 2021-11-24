@@ -9,12 +9,13 @@
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
+global $sponsors;
 
 get_header();
 $container = get_theme_mod( 'understrap_container_type' );
 
 if ( is_front_page() ) {
-	get_template_part( 'global-templates/hero' );
+	//get_template_part( 'global-templates/hero' );
 }
 ?>
 
@@ -38,9 +39,6 @@ if ( is_front_page() ) {
 							comments_template();
 						}
 					}
-					?>
-
-					<?php
 
 					
 						$args = array(
@@ -59,24 +57,7 @@ if ( is_front_page() ) {
 
 					$sponsors = get_posts( $args );
 					foreach ($sponsors as $sponsor ) {
-
-						?>
-							<div class="col-md-6 col-md-6 sponsor-col" >
-								<div class="card">
-									<h3><?php echo $sponsor->post_title;?></h3>
-							 		<div class="image-container">
-							 			
-							 			<?php $sponsorlink = get_field('sponsor_url', $sponsor->ID); ?>
-							 			<a href="<?=$sponsorlink?>" target="_blank">
-							 				<img src="<?=get_the_post_thumbnail_url($sponsor->ID, 'medium')?>" />
-							 			</a>	
-							 		</div>	
-
-								</div>
-							</div>	
-
-						
-						<?php
+						get_template_part( 'loop-templates/content', 'sponsors' );	
 					}
 					?>
 					</div> <!-- sponsor row-->
