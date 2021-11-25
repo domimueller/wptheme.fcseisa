@@ -1,32 +1,34 @@
 /* #### General  #### */
 
 .image-container {text-align: center;}
+.card-wrapper, .card-holder {margin-top: $hugeSpace; margin-bottom: $hugeSpace;}
+
 
 /* #### LOGO  #### */
 
-a.custom-logo-link {max-height: 99px; max-width: 80px; margin-top: 15px; margin-bottom: 15px; }
+a.custom-logo-link {max-height: 99px; max-width: 80px; margin-top: $smallSpace; margin-bottom: $smallSpace; }
 
 
 /* ### POST ENTRIES ON HOMEPAGE */
 
-.custom-postentry-col {margin-top: 40px; margin-bottom: 40px; }
-.image-container {margin-top: 30px; margin-bottom: 30px; text-align: center;}
+.custom-postentry-col {margin-top: $hugeSpace; margin-bottom: $hugeSpace; }
+.image-container {margin-top: $largeSpace; margin-bottom: $largeSpace; text-align: center;}
 .card {box-shadow: 0 1px 3px rgb(34 40 49 / 20%); border-radius: 3px; -webkit-transition: all .2s ease-in-out; transition: all .2s ease-in-out; padding: 3rem 2.75rem;}
 .text-container {margin-top: 10px; margin-bottom: 0px;}
-.entry-header {margin-bottom: 20px;}
+.entry-header {margin-bottom: $Space;}
 
 /* #### Form Styles #### */
 
 
-.gfield {margin-top: 15px; margin-bottom: 15px}
-body .gform_wrapper.gravity-theme fieldset.fieldsetAdvancedMargin {margin-top: 30px;}
+.gfield {margin-top: $smallSpace; margin-bottom: $smallSpace}
+body .gform_wrapper.gravity-theme fieldset.fieldsetAdvancedMargin {margin-top: $largeSpace;}
 
 input[type="date"], input[type="datetime"], input[type="datetime-local"],  input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="range"], input[type="search"], input[type="tel"],  input[type="text"], input[type="time"], input[type="url"], input[type="week"] , textarea, select{
 	background-color: transparent !important;
 	text-transform: uppercase !important;
 	border-radius: 0;
-	border: 2px solid #102985;
-	color: #102985;
+	border: 2px solid $primary;
+	color: $primary;
 	height: 45px;
 	outline: none;
 }
@@ -36,8 +38,8 @@ input[type="date"], input[type="datetime"], input[type="datetime-local"],  input
 
 input[type="date"], input[type="datetime"], input[type="datetime-local"],  input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="range"], input[type="search"], input[type="tel"],  input[type="text"], input[type="time"], input[type="url"], input[type="week"] , textarea, select, textarea {
 
-	padding-left: 15px !important;
-	margin-top: 30px; margin-bottom: 30px;
+	padding-left: $smallSpace !important;
+	margin-top: $largeSpace; margin-bottom: $largeSpace;
 }
 
 
@@ -50,15 +52,15 @@ form label.gfield_label {display: none !important;}
 input[type="submit"]{
     width: 200px;
     cursor: pointer;
-    margin-top: 20px;
-    padding: 10px 30px 11px;
+    margin-top: $Space;
+    padding: 10px $largeSpace 11px;
     border-style: solid;
-    border-color: #102985;
+    border-color: $primary;
     border-width: 2px;
     -webkit-border-radius: 2px;
     -moz-border-radius: 3px;
     border-radius: 2px;
-    background: #102985;
+    background: $primary;
     color: #fff;
     text-transform: uppercase;
     font-weight: normal;
@@ -79,7 +81,7 @@ input[type="submit"]{
 
 input[type="submit"]:hover {
     background: #fff !important;
-    color: #102985 !important;
-    border-color: #102985;
+    color: $primary !important;
+    border-color: $primary;
 
 }   

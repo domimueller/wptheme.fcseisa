@@ -13,7 +13,7 @@ global $sponsor;
 
 
 // different layout for home and "sponsoren"
-$columnwidth = 'sponsor-col '. (is_front_page() ? 'col-sm-3' : 'col-sm-6');
+$columnwidth = 'sponsor-col card-holder' . ' ' . (is_front_page() ? 'col-sm-3' : 'col-sm-6');
 $sponsortype =  (is_front_page() ? 'smallSponsorLayout' : 'bigSponsorLayout');
 
 ?>

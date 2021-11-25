@@ -1,5 +1,6 @@
 @charset "UTF-8";
 /* #### COLOR SETTINGS #### */
+/* #### Spaces #### */
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -14621,6 +14622,11 @@ figure.woocommerce-product-gallery__wrapper {
 /* #### General  #### */
 .image-container {
   text-align: center;
+}
+
+.card-wrapper, .card-holder {
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 /* #### LOGO  #### */
