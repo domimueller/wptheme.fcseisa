@@ -14629,6 +14629,11 @@ figure.woocommerce-product-gallery__wrapper {
   margin-bottom: 40px;
 }
 
+/* #### Nav  #### */
+[title=customMenuelement-hidden] {
+  display: none !important;
+}
+
 /* #### LOGO  #### */
 a.custom-logo-link {
   max-height: 99px;

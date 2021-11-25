@@ -4,6 +4,11 @@
 .card-wrapper, .card-holder {margin-top: $hugeSpace; margin-bottom: $hugeSpace;}
 
 
+/* #### Nav  #### */
+[title="customMenuelement-hidden"]{
+    display: none !important;
+}
+
 /* #### LOGO  #### */
 
 a.custom-logo-link {max-height: 99px; max-width: 80px; margin-top: $smallSpace; margin-bottom: $smallSpace; }
