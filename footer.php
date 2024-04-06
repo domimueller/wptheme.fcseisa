@@ -25,13 +25,35 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 				<footer class="site-footer" id="colophon">
 
-					<div class="site-info">
+					<div class="site-info row">
 
+						<div class="site-info first-footer-part col-md-4 col-sm-12">
 
-						<a href="https://www.instagram.com/fcseisa_08/" target="_blank">Seisa 08 auf Instagram</a><span class="sep"> | </span> Allez Seisa!  <span class="sep"> | </span> <a href="https://club.football.ch/club/spielbetrieb/aktuelle-spiele.aspx/v-875798"  target="_blank">Seisa 08 auf club.football.ch</a>
+							<span> Allez Seisa!</span>
+							<a href="https://www.instagram.com/fcseisa_08/" target="_blank">Seisa 08 auf Instagram</a>
+							<a href="https://club.football.ch/club/spielbetrieb/aktuelle-spiele.aspx/v-875798"  target="_blank">Seisa 08 auf club.football.ch</a>
 
+						</div>
+
+						<div class="footer-nav second-footer-part col-md-4 col-sm-12">
+							<nav id="second-nav" class="navbar navbar-expand-md navbar-dark bg-primary">
+
+								<?php 
+								    wp_nav_menu(   
+								        array ( 
+								            'theme_location' => 'domi-custom-footer-menu' 
+								         ) 
+								    ); 
+								?>
+							</nav>	
+						</div>						
+
+						<div class="site-info third-footer-part  col-md-4 col-sm-12">
+							<?php the_custom_logo();?>
+						</div>
 
 					</div><!-- .site-info -->
+
 
 				</footer><!-- #colophon -->
 

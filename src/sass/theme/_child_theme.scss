@@ -26,6 +26,8 @@ a.custom-logo-link {max-height: 99px; max-width: 80px; margin-top: $smallSpace; 
 
 
 .gfield {margin-top: $smallSpace; margin-bottom: $smallSpace}
+
+body .gform_wrapper.gravity-theme fieldset.fieldsetAdvancedMargin {margin-top: 30px;}
 body .gform_wrapper.gravity-theme fieldset.fieldsetAdvancedMargin {margin-top: $largeSpace;}
 
 input[type="date"], input[type="datetime"], input[type="datetime-local"],  input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="range"], input[type="search"], input[type="tel"],  input[type="text"], input[type="time"], input[type="url"], input[type="week"] , textarea, select{
@@ -51,6 +53,7 @@ input[type="date"], input[type="datetime"], input[type="datetime-local"],  input
 form label.gfield_label {display: none !important;}
 .gform_wrapper textarea.medium { width: calc(50% - 8px) !important; }
 
+.gform_wrapper.gravity-theme .gfield textarea.large {height: 150px;}
 /* gfield html comments  */
 .gfield_html_formatted {display: block;}
 
@@ -90,3 +93,50 @@ input[type="submit"]:hover {
     border-color: $primary;
 
 }   
+
+input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=range], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], select, textarea {    text-transform: none!important;}
+
+
+/*footer*/
+#wrapper-footer {background-color: #102985!important}
+#wrapper-footer ul  li a, #wrapper-footer a, #wrapper-footer span {color:white; display:block;}
+.first-footer-part, .second-footer-part {margin-top:15px;}
+#second-nav .menu-menu-2-container{float:left;}
+.site-footer{width:100%;}
+
+footer .site-info {margin-bottom:30px;}
+.footer-nav li {list-style:none; float: left; margin-right: 20px;}
+
+footer a.navbar-brand.custom-logo-link {float:right;}
+
+
+
+
+
+
+
+
+/* #### Form Styles #### */
+
+
+/* Mobile */
+
+@media (max-width: 991px) {
+    .wc-block-checkout__actions_row .components-button.wc-block-components-checkout-place-order-button, li.product a.add-to-cart-button, li.product add-to-cart-container {width: auto; min-width: 95%; max-width: 95%;}
+    .woocommerce-message .button.wc-forward {display:block; width:100%; margin-bottom: $largeSpace;}
+    .woocommerce-message::before{top:calc(50% + 15px)}
+    footer .navbar{display:block;}
+    footer .navbar ul {padding:0;}
+    body:not(.woocommerce-block-theme-has-button-styles) .wc-block-components-button:not(.is-link) {width:100%}
+    .wc-block-checkout__add-note .wc-block-components-textarea {min-height:90px;}
+    body.woocommerce-checkout ul {padding:0;}
+    .woocommerce ul.order_details li {margin-right:0;border:none;padding:0;width:100%;margin-bottom:$smallSpace;}
+    footer a.navbar-brand.custom-logo-link {float:none;}
+    
+    #cookie-law-info-bar .cli-bar-btn_container a {flex-wrap: wrap-reverse; width:100%}
+    #cookie-law-info-bar .cli_settings_button {margin-bottom:$smallSpace !important;}
+    #cookie-law-info-bar .cli-style-v2 .cli-bar-btn_container .cli-plugin-button {margin-top:5;margin-bottom:5;}
+    
+
+
+}  
