@@ -14763,7 +14763,7 @@ input[type=date], input[type=datetime-local], input[type=datetime], input[type=e
   margin-top: 15px;
 }
 
-#second-nav .menu-menu-2-container {
+footer nav .menu-menu-2-container {
   float: left;
 }
 
@@ -14804,12 +14804,17 @@ footer a.navbar-brand.custom-logo-link {
     top: calc(50% + 15px);
   }
 
-  footer .navbar {
+  footer .navbar, footer nav .menu-menu-2-container {
     display: block;
+    width: 100%;
+    float: left;
   }
 
   footer .navbar ul {
     padding: 0;
+    display: block;
+    float: left;
+    width: 100%;
   }
 
   body:not(.woocommerce-block-theme-has-button-styles) .wc-block-components-button:not(.is-link) {
