@@ -14849,6 +14849,10 @@ footer a.navbar-brand.custom-logo-link {
     margin-top: 5;
     margin-bottom: 5;
   }
+
+  #second-nav {
+    padding: 0;
+  }
 }
 .has-blue-color,
 .has-blue-color:visited {
